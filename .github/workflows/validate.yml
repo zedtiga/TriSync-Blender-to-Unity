@@ -1,0 +1,39 @@
+name: Validate source
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-checks:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Python regression tests
+        run: python -m unittest discover -s tests/python -p "test_*.py" -v
+
+      - name: Release metadata
+        run: python tools/release_metadata.py --repo-root .
+
+      - name: Native helper import
+        run: python tools/native_import_smoke.py --repo-root . --module-root blender_addon/blendersync_vnext/native/artifacts/win_amd64/cpython-311
+
+      - name: Protocol contracts
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Test-ProtocolTypes.ps1
+
+      - name: Unity player assembly boundary
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Test-UnityPlayerBoundary.ps1

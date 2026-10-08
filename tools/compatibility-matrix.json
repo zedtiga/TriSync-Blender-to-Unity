@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    {
+      "id": "blender-4.2",
+      "product": "blender",
+      "label": "Blender 4.2 LTS floor",
+      "version": "4.2",
+      "verificationStatus": "verified",
+      "executableEnvironmentVariable": "BLENDERSYNC_BLENDER_42_EXE",
+      "checks": [
+        "addon-register",
+        "mesh-api",
+        "geometry-nodes-api",
+        "evaluated-mesh-api",
+        "evaluated-material-api",
+        "animation-action-api",
+        "bone-pose-numeric-stability",
+        "rig-shape-key-animation-api",
+        "rigged-blendshape-weight-api",
+        "ui-icon-api",
+        "localization-facade",
+        "logging-facade",
+        "native-probe",
+        "addon-unregister"
+      ]
+    },
+    {
+      "id": "blender-4.3",
+      "product": "blender",
+      "label": "Blender 4.3",
+      "version": "4.3",
+      "verificationStatus": "verified",
+      "executableEnvironmentVariable": "BLENDERSYNC_BLENDER_43_EXE",
+      "checks": [
+        "addon-register",
+        "mesh-api",
+        "geometry-nodes-api",
+        "evaluated-mesh-api",
+        "evaluated-material-api",
+        "animation-action-api",
+        "bone-pose-numeric-stability",
+        "rig-shape-key-animation-api",
+        "rigged-blendshape-weight-api",
+        "ui-icon-api",
+        "localization-facade",
+        "logging-facade",
+        "native-probe",
+        "addon-unregister"
+      ]
+    },
+    {
+      "id": "blender-4.4",
+      "product": "blender",
+      "label": "Blender 4.4",
+      "version": "4.4",
+      "verificationStatus": "verified",
+      "executableEnvironmentVariable": "BLENDERSYNC_BLENDER_44_EXE",
+      "checks": [
+        "addon-register",
+        "mesh-api",
+        "geometry-nodes-api",
+        "evaluated-mesh-api",
+        "evaluated-material-api",
+        "animation-action-api",
+        "bone-pose-numeric-stability",
+        "rig-shape-key-animation-api",
+        "rigged-blendshape-weight-api",
+        "ui-icon-api",
+        "localization-facade",
+        "logging-facade",
+        "native-probe",
+        "addon-unregister"
+      ]
+    },
+    {
+      "id": "blender-4.5",
+      "product": "blender",
+      "label": "Blender 4.5 LTS",
+      "version": "4.5",
+      "verificationStatus": "verified",
+      "executableEnvironmentVariable": "BLENDERSYNC_BLENDER_45_EXE",
+      "checks": [
+        "addon-register",
+        "mesh-api",
+        "geometry-nodes-api",
+        "evaluated-mesh-api",
+        "evaluated-material-api",
+        "animation-action-api",
+        "bone-pose-numeric-stability",
+        "rig-shape-key-animation-api",
+        "rigged-blendshape-weight-api",
+        "ui-icon-api",
+        "localization-facade",
+        "logging-facade",
+        "native-probe",
+        "addon-unregister"
+      ]
+    },
+    {
+      "id": "blender-5.0",
+      "product": "blender",
+      "label": "Blender 5.0 current baseline",
+      "version": "5.0",
+      "verificationStatus": "current-baseline",
+      "executableEnvironmentVariable": "BLENDERSYNC_BLENDER_50_EXE",
+      "checks": [
+        "addon-register",
+        "mesh-api",
+        "geometry-nodes-api",
+        "evaluated-mesh-api",
+        "evaluated-material-api",
+        "animation-action-api",
+        "bone-pose-numeric-stability",
+        "rig-shape-key-animation-api",
+        "rigged-blendshape-weight-api",
+        "ui-icon-api",
+        "localization-facade",
+        "logging-facade",
+        "native-probe",
+        "addon-unregister"
+      ]
+    },
+    {
+      "id": "blender-5.1",
+      "product": "blender",
+      "label": "Blender 5.1",
+      "version": "5.1",
+      "verificationStatus": "verified",
+      "executableEnvironmentVariable": "BLENDERSYNC_BLENDER_51_EXE",
+      "checks": [
+        "addon-register",
+        "mesh-api",
+        "geometry-nodes-api",
+        "evaluated-mesh-api",
+        "evaluated-material-api",
+        "animation-action-api",
+        "bone-pose-numeric-stability",
+        "rig-shape-key-animation-api",
+        "rigged-blendshape-weight-api",
+        "ui-icon-api",
+        "localization-facade",
+        "logging-facade",
+        "native-probe",
+        "addon-unregister"
+      ]
+    },
+    {
+      "id": "blender-5.2",
+      "product": "blender",
+      "label": "Blender 5.2 LTS",
+      "version": "5.2",
+      "verificationStatus": "verified",
+      "executableEnvironmentVariable": "BLENDERSYNC_BLENDER_52_EXE",
+      "checks": [
+        "addon-register",
+        "mesh-api",
+        "geometry-nodes-api",
+        "evaluated-mesh-api",
+        "evaluated-material-api",
+        "animation-action-api",
+        "bone-pose-numeric-stability",
+        "rig-shape-key-animation-api",
+        "rigged-blendshape-weight-api",
+        "ui-icon-api",
+        "localization-facade",
+        "logging-facade",
+        "native-probe",
+        "addon-unregister"
+      ]
+    },
+    {
+      "id": "unity-6000.0",
+      "product": "unity",
+      "label": "Unity 6000.0 LTS floor",
+      "version": "6000.0",
+      "urpVersion": "17.0",
+      "verificationStatus": "verified",
+      "editorEnvironmentVariable": "BLENDERSYNC_UNITY_6000_0_EDITOR",
+      "projectEnvironmentVariable": "BLENDERSYNC_UNITY_6000_0_PROJECT",
+      "checks": [
+        "editor-compile",
+        "editmode"
+      ]
+    },
+    {
+      "id": "unity-6000.1",
+      "product": "unity",
+      "label": "Unity 6000.1",
+      "version": "6000.1",
+      "urpVersion": "17.1",
+      "verificationStatus": "verified",
+      "editorEnvironmentVariable": "BLENDERSYNC_UNITY_6000_1_EDITOR",
+      "projectEnvironmentVariable": "BLENDERSYNC_UNITY_6000_1_PROJECT",
+      "checks": [
+        "editor-compile",
+        "editmode"
+      ]
+    },
+    {
+      "id": "unity-6000.2",
+      "product": "unity",
+      "label": "Unity 6000.2",
+      "version": "6000.2",
+      "urpVersion": "17.2",
+      "verificationStatus": "verified",
+      "editorEnvironmentVariable": "BLENDERSYNC_UNITY_6000_2_EDITOR",
+      "projectEnvironmentVariable": "BLENDERSYNC_UNITY_6000_2_PROJECT",
+      "checks": [
+        "editor-compile",
+        "editmode"
+      ]
+    },
+    {
+      "id": "unity-6000.3",
+      "product": "unity",
+      "label": "Unity 6000.3 current baseline",
+      "version": "6000.3",
+      "urpVersion": "17.3",
+      "verificationStatus": "current-baseline",
+      "editorEnvironmentVariable": "BLENDERSYNC_UNITY_6000_3_EDITOR",
+      "projectEnvironmentVariable": "BLENDERSYNC_UNITY_6000_3_PROJECT",
+      "checks": [
+        "editor-compile",
+        "editmode"
+      ]
+    },
+    {
+      "id": "unity-6000.4",
+      "product": "unity",
+      "label": "Unity 6000.4",
+      "version": "6000.4",
+      "urpVersion": "17.4",
+      "verificationStatus": "verified",
+      "editorEnvironmentVariable": "BLENDERSYNC_UNITY_6000_4_EDITOR",
+      "projectEnvironmentVariable": "BLENDERSYNC_UNITY_6000_4_PROJECT",
+      "checks": [
+        "editor-compile",
+        "editmode"
+      ]
+    },
+    {
+      "id": "unity-6000.5",
+      "product": "unity",
+      "label": "Unity 6000.5",
+      "version": "6000.5",
+      "urpVersion": "17.5",
+      "verificationStatus": "verified",
+      "editorEnvironmentVariable": "BLENDERSYNC_UNITY_6000_5_EDITOR",
+      "projectEnvironmentVariable": "BLENDERSYNC_UNITY_6000_5_PROJECT",
+      "checks": [
+        "editor-compile",
+        "editmode"
+      ]
+    }
+  ],
+  "interopPairs": [
+    {
+      "id": "floor-floor",
+      "blenderProfile": "blender-4.2",
+      "unityProfile": "unity-6000.0",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "floor-unity-6000.1",
+      "blenderProfile": "blender-4.2",
+      "unityProfile": "unity-6000.1",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "floor-unity-6000.2",
+      "blenderProfile": "blender-4.2",
+      "unityProfile": "unity-6000.2",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "floor-current",
+      "blenderProfile": "blender-4.2",
+      "unityProfile": "unity-6000.3",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "floor-unity-6000.4",
+      "blenderProfile": "blender-4.2",
+      "unityProfile": "unity-6000.4",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "floor-ceiling",
+      "blenderProfile": "blender-4.2",
+      "unityProfile": "unity-6000.5",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-4.3-floor",
+      "blenderProfile": "blender-4.3",
+      "unityProfile": "unity-6000.0",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-4.3-ceiling",
+      "blenderProfile": "blender-4.3",
+      "unityProfile": "unity-6000.5",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-4.4-floor",
+      "blenderProfile": "blender-4.4",
+      "unityProfile": "unity-6000.0",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-4.4-ceiling",
+      "blenderProfile": "blender-4.4",
+      "unityProfile": "unity-6000.5",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-4.5-floor",
+      "blenderProfile": "blender-4.5",
+      "unityProfile": "unity-6000.0",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-4.5-ceiling",
+      "blenderProfile": "blender-4.5",
+      "unityProfile": "unity-6000.5",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "current-floor",
+      "blenderProfile": "blender-5.0",
+      "unityProfile": "unity-6000.0",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "current-current",
+      "blenderProfile": "blender-5.0",
+      "unityProfile": "unity-6000.3",
+      "verificationStatus": "current-baseline",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "current-ceiling",
+      "blenderProfile": "blender-5.0",
+      "unityProfile": "unity-6000.5",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-5.1-floor",
+      "blenderProfile": "blender-5.1",
+      "unityProfile": "unity-6000.0",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "blender-5.1-ceiling",
+      "blenderProfile": "blender-5.1",
+      "unityProfile": "unity-6000.5",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "ceiling-floor",
+      "blenderProfile": "blender-5.2",
+      "unityProfile": "unity-6000.0",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "ceiling-unity-6000.1",
+      "blenderProfile": "blender-5.2",
+      "unityProfile": "unity-6000.1",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "ceiling-unity-6000.2",
+      "blenderProfile": "blender-5.2",
+      "unityProfile": "unity-6000.2",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "ceiling-current",
+      "blenderProfile": "blender-5.2",
+      "unityProfile": "unity-6000.3",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "ceiling-unity-6000.4",
+      "blenderProfile": "blender-5.2",
+      "unityProfile": "unity-6000.4",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    },
+    {
+      "id": "ceiling-ceiling",
+      "blenderProfile": "blender-5.2",
+      "unityProfile": "unity-6000.5",
+      "verificationStatus": "verified",
+      "check": "level-1-smoke"
+    }
+  ]
+}

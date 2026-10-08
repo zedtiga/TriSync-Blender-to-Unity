@@ -1,0 +1,123 @@
+name: Build native artifacts
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  CRATE_ROOT: blender_addon/blendersync_vnext/native/blendersync_native
+
+jobs:
+  windows-x86-64:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Build native module
+        shell: pwsh
+        run: |
+          $env:PYO3_NO_PYTHON = '1'
+          cargo build --release --locked --manifest-path "$env:CRATE_ROOT/Cargo.toml"
+          New-Item -ItemType Directory -Force -Path native-artifact/win_amd64/cpython-311 | Out-Null
+          Copy-Item "$env:CRATE_ROOT/target/release/blendersync_native.dll" native-artifact/win_amd64/cpython-311/blendersync_native.pyd
+
+      - name: Import smoke
+        shell: pwsh
+        run: |
+          python tools/native_import_smoke.py --repo-root . --module-root native-artifact/win_amd64/cpython-311
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blendersync-native-win_amd64
+          path: native-artifact/
+          if-no-files-found: error
+          retention-days: 14
+
+  linux-x86-64:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Build native module
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYO3_NO_PYTHON=1 cargo build --release --locked --manifest-path "$CRATE_ROOT/Cargo.toml"
+          mkdir -p native-artifact/linux_x86_64/cpython-311
+          cp "$CRATE_ROOT/target/release/libblendersync_native.so" native-artifact/linux_x86_64/cpython-311/blendersync_native.so
+
+      - name: Import smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/native_import_smoke.py --repo-root . \
+            --module-root native-artifact/linux_x86_64/cpython-311
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blendersync-native-linux_x86_64
+          path: native-artifact/
+          if-no-files-found: error
+          retention-days: 14
+
+  macos-universal:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - name: Build native modules
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYO3_NO_PYTHON=1 cargo build --release --locked --target aarch64-apple-darwin --manifest-path "$CRATE_ROOT/Cargo.toml"
+          PYO3_NO_PYTHON=1 cargo build --release --locked --target x86_64-apple-darwin --manifest-path "$CRATE_ROOT/Cargo.toml"
+          mkdir -p native-artifact/macos_arm64/cpython-311 native-artifact/macos_x86_64/cpython-311
+          cp "$CRATE_ROOT/target/aarch64-apple-darwin/release/libblendersync_native.dylib" native-artifact/macos_arm64/cpython-311/blendersync_native.so
+          cp "$CRATE_ROOT/target/x86_64-apple-darwin/release/libblendersync_native.dylib" native-artifact/macos_x86_64/cpython-311/blendersync_native.so
+          file native-artifact/macos_arm64/cpython-311/blendersync_native.so | grep -q arm64
+          file native-artifact/macos_x86_64/cpython-311/blendersync_native.so | grep -q x86_64
+
+      - name: Import smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$(uname -m)" in
+            arm64) smoke_platform=macos_arm64 ;;
+            x86_64) smoke_platform=macos_x86_64 ;;
+            *) echo "Unsupported macOS runner architecture: $(uname -m)" >&2; exit 1 ;;
+          esac
+          python tools/native_import_smoke.py --repo-root . \
+            --module-root "native-artifact/$smoke_platform/cpython-311"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blendersync-native-macos
+          path: native-artifact/
+          if-no-files-found: error
+          retention-days: 14

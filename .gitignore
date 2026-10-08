@@ -1,0 +1,66 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vs/
+.vscode/
+.idea/
+
+# Python / Blender add-on caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local logs, debug snapshots, and temporary scratch files
+/debug/
+/logs/
+*.log
+/tmp/
+/tmp_*
+
+# Rust build output
+target/
+**/target/
+
+# Keep the packaged native runtime artifacts, but ignore build products.
+!blender_addon/blendersync_vnext/native/artifacts/**
+
+# Unity generated project folders, in case a full Unity project is placed here.
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+MemoryCaptures/
+
+# Unity package runtime/generated state that should be produced by testing/importing,
+# not hand-maintained as source.
+unity/TriSync/DebugSnapshots/
+unity/TriSync/DebugSnapshots.meta
+unity/TriSync/Registry/*.json
+unity/TriSync/Resources/AnimationClips/
+unity/TriSync/Resources/AnimationClips.meta
+unity/TriSync/Resources/AnimationControllers/
+unity/TriSync/Resources/AnimationControllers.meta
+unity/TriSync/Resources/Avatars/
+unity/TriSync/Resources/Avatars.meta
+unity/TriSync/Resources/MaterialsV1/
+unity/TriSync/Resources/MaterialsV1.meta
+unity/TriSync/Resources/Materials/
+unity/TriSync/Resources/Materials.meta
+unity/TriSync/Resources/Meshes/
+unity/TriSync/Resources/Meshes.meta
+unity/TriSync/Resources/RiggedObjects/
+unity/TriSync/Resources/RiggedObjects.meta
+unity/TriSync/Resources/TexturesV1/
+unity/TriSync/Resources/TexturesV1.meta
+unity/TriSync/Resources/Textures/
+unity/TriSync/Resources/Textures.meta

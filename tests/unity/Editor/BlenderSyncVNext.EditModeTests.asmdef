@@ -1,0 +1,21 @@
+{
+  "name": "BlenderSyncVNext.EditModeTests",
+  "rootNamespace": "BlenderSyncVNext.Tests",
+  "references": [
+    "BlenderSyncVNext.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
