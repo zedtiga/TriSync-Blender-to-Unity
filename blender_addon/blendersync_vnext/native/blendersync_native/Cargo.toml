@@ -1,0 +1,17 @@
+﻿[package]
+name = "blendersync_native"
+version = "0.2.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+
+[lib]
+name = "blendersync_native"
+crate-type = ["cdylib"]
+
+[dependencies]
+bytemuck = "1"
+pyo3 = { version = "0.22", features = ["extension-module", "abi3-py311", "generate-import-lib"] }
+sha1 = "0.10"
+
+[build-dependencies]
+pyo3-build-config = "0.22"
